@@ -1,0 +1,261 @@
+agm-map {
+  height: 250px;
+}
+.example-full-width {
+  width: 100%;
+}
+
+.card {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+agm-map {
+  height: 500px;
+}
+#form-border {
+  border-radius: 12px;
+  margin: 3em;
+  background-color: #f7f7f7;
+  line-height: normal;
+  border: 1px solid #ccc;
+  height: 470px;
+  width: 500px;
+  padding: 20px 50px 50px 20px;
+}
+
+/* a {
+  color: #c30e2e;
+} */
+
+.example-container {
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+  border: 1px solid #555;
+}
+.space {
+  margin: 20px;
+}
+
+agm-map {
+  height: 300px;
+}
+mat-card-title {
+  margin-left: 10px;
+}
+
+/* @media screen and (max-width: 700px) and (min-width:300px){
+  #form-border{
+    margin:3em;;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    height: auto;
+    line-height: normal;
+    width: 280px;
+    padding: 20px 50px 50px 20px;
+  }
+
+} */
+
+.login_header {
+  margin: 1em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.help-block {
+  color: red;
+}
+.user,
+.pass {
+  font-size: 20px;
+}
+
+.signup-content {
+  align: center;
+}
+
+.loginButton {
+  text-align: center;
+}
+
+.loginButton button {
+  background-color: #c30e2e;
+  border-color: #c30e2e;
+  color: white;
+  margin: 20px;
+}
+
+.loginButton button:disabled {
+  background-color: #d7d7d7;
+  border-color: #d7d7d7;
+}
+
+.fbLogin {
+  background-color: #3b5998;
+  color: white;
+  margin: 0 5px;
+}
+
+.googleLogin {
+  background-color: #dd4b39;
+  color: white;
+  margin: 0 5px;
+}
+
+.fa {
+  padding: 5px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px;
+}
+
+/* @media (min-width: 320px) {
+.info-cards {
+
+  margin-left: 10px;
+  text-align: center;
+  min-width: 282px;
+}
+.example-full-width{
+width: 80%;
+}
+} */
+
+@media (min-width: 359px) {
+  .info-cards {
+    /* margin-left: 40px; */
+    margin-left: 11px;
+    text-align: center;
+    min-width: 315px;
+  }
+  .example-full-width {
+    width: 80%;
+  }
+}
+
+@media (min-width: 375px) {
+  .info-cards {
+    /* margin-left: 40px; */
+    margin-top: 15px;
+    margin-left: 12px;
+    text-align: center;
+    min-width: 332px;
+  }
+  .example-full-width {
+    width: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+  .info-cards {
+    /* margin-left: 40px; */
+    margin-left: 11px;
+    text-align: center;
+    min-width: 283px;
+    margin-top: 8px;
+  }
+  .example-full-width {
+    width: 80%;
+  }
+}
+
+/* @media only screen (min-width: 359px) and (max-width:361px){
+  .info-cards {
+    margin-top: 20px;
+    margin-left: 10px;
+    text-align: center;
+    min-width: 323px;
+}
+.example-full-width{
+width: 80%;
+}
+} */
+
+@media screen (min-width: 319px) and (max-width: 321px) {
+  .info-cards {
+    /* margin-left: 40px; */
+    margin-left: 10px;
+    text-align: center;
+    min-width: 282px;
+  }
+  .example-full-width {
+    width: 80%;
+  }
+}
+
+@media (min-width: 409px) {
+  .info-cards {
+    /* margin-left: 30px;
+    text-align:center; */
+    margin-top: 15px;
+    margin-left: 12px;
+    text-align: center;
+    min-width: 373px;
+  }
+  .example-full-width {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .info-cards {
+    /* margin-left: 30px;
+    text-align:center; */
+    margin-top: 15px;
+    margin-left: 193px;
+    text-align: center;
+    min-width: 489px;
+  }
+  .example-full-width {
+    width: 80%;
+  }
+}
+@media (min-width: 1024px) {
+  .info-cards {
+    /* margin-left: 30px;
+    text-align:center; */
+    margin-top: 15px;
+    margin-left: 335px;
+    text-align: center;
+    min-width: 347px;
+  }
+  .example-full-width {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .info-cards {
+    margin-top: 15px;
+    text-align: center;
+    min-width: 396px;
+    margin-left: 578px;
+  }
+  .example-full-width {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1366px) {
+  .info-cards {
+    text-align: center;
+    min-width: 385px;
+    margin-left: 578px;
+  }
+  .example-full-width {
+    width: 80%;
+  }
+}
+
+.mat-card {
+  align-content: center;
+  margin: 20px auto;
+  max-width: 281px;
+  /* margin-left: 300px; */
+}
+
+.example-full-width {
+  /* width: 70%; */
+}

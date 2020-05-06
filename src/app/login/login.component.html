@@ -1,0 +1,83 @@
+<div class="view">
+  <div *ngIf="auth.user$ | async; then authenticated else guest">
+  </div>
+
+  <ng-template #guest>
+    <mat-card class="info-cards">
+      <mat-card-title style="text-align: center;">
+        Login
+        <mat-card-subtitle>
+        </mat-card-subtitle>
+      </mat-card-title>
+      <mat-card-content style="text-align: center;">
+        <form [formGroup]='form' (ngSubmit)="submit(form)">
+          <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;
+          <mat-form-field style="width:90%;" class="example-full-width">
+            <input matInput name="email" formControlName="email" placeholder="Email"
+              pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$" required />
+          </mat-form-field><br>
+
+          <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;
+
+          <mat-form-field style="width:90%;" class="example-full-width">
+            <input matInput type="password" name="password" formControlName="password" placeholder="Password"
+              required />
+          </mat-form-field><br>
+          <p><a [routerLink]="['/forgot-password']">Forgot Password?</a></p>
+          <div class="loginButton">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Login</button>
+          </div>
+          - OR -
+
+
+          <div class="row" style="margin-bottom: 20px;">
+            <div class="col-12">
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <button mat-raised-button class="fbLogin" (click)="signInWithFB()"><i class="fa fa-facebook"></i>
+                Facebook</button>
+
+              <div class="col">
+                <p>Need an account? <a [routerLink]="['/register']"><b>Register</b></a></p>
+              </div>
+            </div>
+          </div>
+
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+  </ng-template>
+
+  <ng-template #authenticated>
+    <!-- <div *ngIf="auth.user$ | async as user">
+      <button mat-raised-button color="primary" style="float: right; margin:20px;" (click)="logout()">Logout</button>
+    </div>
+
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Search Places" aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="getSelectedValue($event)">
+        <mat-option *ngFor="let place of places" [value]="place.name">
+          <span>{{place.name}}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <mat-card *ngIf="placeSearched" class="property">
+      <p>Name: {{selectedPlace.name}}</p>
+      <p>Address: {{selectedPlace.address}}</p>
+      <p>Open hours: {{selectedPlace.opening_hours}}</p>
+      <agm-map [latitude]="selectedPlace.location.latitude" [longitude]="selectedPlace.location.longitude">
+        <agm-marker [latitude]="selectedPlace.location.latitude" [longitude]="selectedPlace.location.longitude">
+        </agm-marker>
+      </agm-map>
+      <div style="margin:20px;">
+        <button colour="primary" mat-raised-button (click)="addMyPlaces()">Save</button>
+      </div>
+    </mat-card> -->
+  </ng-template>
+</div>

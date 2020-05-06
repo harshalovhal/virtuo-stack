@@ -1,0 +1,55 @@
+<div *ngIf="places_size>0">
+  <table mat-table style="width: 100%;" [dataSource]="my_places" class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element">
+        <input matInput (change)="updateName($event.target.value,'name',element)" [value]="element.name">
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let element">
+        <input matInput (change)="updateName($event.target.value,'address',element)" [value]="element.address">
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hours">
+      <th mat-header-cell *matHeaderCellDef> Opening hours </th>
+      <td mat-cell *matCellDef="let element">
+        <input matInput (change)="updateName($event.target.value,'opening_hours',element)"
+          [value]="element.opening_hours"> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="latitude">
+      <th mat-header-cell *matHeaderCellDef> Latitude </th>
+      <td input mat-cell *matCellDef="let element">
+        <input matInput (change)="updateName($event.target.value,'latitude',element)"
+          [value]="element.location.latitude">
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="longitude">
+      <th mat-header-cell *matHeaderCellDef> Longitude </th>
+      <td mat-cell *matCellDef="let element">
+        <input matInput (change)="updateName($event.target.value,'longitude',element)"
+          [value]="element.location.longitude"> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="remove">
+      <th mat-header-cell *matHeaderCellDef> Remove </th>
+      <td mat-cell *matCellDef="let element">
+        <span class="material-icons" matTooltip="Delete place" (click)="deletePlace(element)">
+          delete
+        </span>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+<div *ngIf="places_size===0">
+  <p>No places</p>
+</div>

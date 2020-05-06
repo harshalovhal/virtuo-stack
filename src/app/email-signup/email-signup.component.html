@@ -1,0 +1,17 @@
+<div class="view" style="text-align: center;">
+  <mat-card>
+    <h3>Sign Up With Email</h3>
+    <form [formGroup]="formData" (ngSubmit)="submit()">
+      <mat-form-field class="form-field">
+        <input matInput placeholder=" Username" name="username" formControlName="username" required>
+      </mat-form-field><br>
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Useremail" name="email" formControlName="email" required>
+      </mat-form-field><br>
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Password" name="password" formControlName="password" required>
+      </mat-form-field><br>
+      <button mat-raised-button type="submit" [disabled]="!formData.valid">Register</button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,21 @@
+<mat-form-field class="example-full-width" style="margin:20px;">
+  <input matInput placeholder="Search Places" aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="getSelectedValue($event)">
+    <mat-option *ngFor="let place of places" [value]="place.name">
+      <span>{{place.name}}</span>
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+<mat-card *ngIf="placeSearched" class="property">
+  <p>Name: {{selectedPlace.name}}</p>
+  <p>Address: {{selectedPlace.address}}</p>
+  <p>Open hours: {{selectedPlace.opening_hours}}</p>
+  <agm-map [latitude]="selectedPlace.location.latitude" [longitude]="selectedPlace.location.longitude"
+    [scrollwheel]=null>
+    <agm-marker [latitude]="selectedPlace.location.latitude" [longitude]="selectedPlace.location.longitude">
+    </agm-marker>
+  </agm-map>
+  <div style="margin:20px;">
+    <button mat-raised-button (click)="addMyPlaces()">Save</button>
+  </div>
+</mat-card>

@@ -1,0 +1,8 @@
+.myinput:focus {
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 150px;
+  height: 40px;
+  padding-top: 2px;
+  border: 1px solid #d3d3d3;
+}

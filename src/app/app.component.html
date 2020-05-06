@@ -1,0 +1,21 @@
+<app-header></app-header>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <div class="space">
+      <a [routerLink]="['/home']">Home </a>
+    </div>
+    <div class="space">
+      <a [routerLink]="['/profile']">Profile </a>
+    </div>
+    <div class="space">
+      <a [routerLink]="['/my-places']">My Places</a>
+    </div>
+    <div class="space">
+      <a (click)="logout()">Logout</a>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

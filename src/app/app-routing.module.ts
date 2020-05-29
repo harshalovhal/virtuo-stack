@@ -8,6 +8,8 @@ import { HeaderComponent } from "./header/header.component";
 import { EmailSignupComponent } from "./email-signup/email-signup.component";
 import { MyPlacesComponent } from "./my-places/my-places.component";
 import { HomeComponent } from "./home/home.component";
+import { CheckinComponent } from "./checkin/checkin.component";
+import { CheckinSuccessComponent } from './checkin-success/checkin-success.component';
 const routes: Routes = [
   {
     path: "profile",
@@ -36,10 +38,20 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     component: HomeComponent,
   },
+  {
+    path: "checkin",
+    canActivate: [AuthGuard],
+    component: CheckinComponent,
+  },
+  {
+    path: "checkin-success",
+    canActivate: [AuthGuard],
+    component: CheckinSuccessComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -1,0 +1,92 @@
+<!-- <div class="example-container"> -->
+<mat-card class="info-cards" style="text-align: center;">
+    <mat-card-title>
+        Customer Checkin Form
+        <!-- <mat-card-subtitle>
+        </mat-card-subtitle> -->
+    </mat-card-title>
+    <mat-card-content style="text-align: center;">
+        <form [formGroup]='form' (ngSubmit)="submit(form)">
+
+            <mat-form-field appearance="fill" style="width:70%">
+                <mat-label>Name</mat-label>
+                <input type="text" formControlName="name" matInput required>
+                <!-- <mat-error *ngIf="name.invalid">{{getRequiredErrorMessage('name')}}</mat-error> -->
+                <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+                <mat-error *ngIf="hasError('name', 'maxlength')">You have more than 20 characters</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill" style="width:70%">
+                <mat-label>Address</mat-label>
+                <input type="text" formControlName="address" matInput required>
+                <!-- <mat-hint align="end">Not more then 100 characters long.</mat-hint> -->
+
+                <mat-error *ngIf="hasError('address', 'required')">Address is required</mat-error>
+                <mat-error *ngIf="hasError('address', 'maxlength')">You have more than 30 characters</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill" style="width:70%">
+                <mat-label>Phone no</mat-label>
+                <input type="phone" formControlName="phone" pattern="(\d{10}|\d{12})" matInput required>
+                <mat-error *ngIf="hasError('phone', 'required')">Phone Number is required</mat-error>
+                <mat-error *ngIf="hasError('phone', 'pattern')">Please Enter Phone in valid format characters
+                </mat-error>
+
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill" style="width:70%">
+                <mat-label>Email</mat-label>
+                <input type="email" formControlName="email" matInput required>
+                <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+                <mat-error *ngIf="hasError('email', 'pattern')">Please Enter email in valid format characters
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill" style="width:70%">
+                <mat-label>Booking Id</mat-label>
+                <input formControlName="booking_id" matInput required>
+                <mat-error *ngIf="hasError('booking_id', 'required')">Booking Id is required</mat-error>
+                <mat-error *ngIf="hasError('booking_id', 'pattern')">Please Enter booking with maximum 5 lenght
+                    characters
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <!-- <mat-form-field>
+                <ngx-mat-file-input [formControl]="fileControl" [multiple]="multiple" [accept]="accept" [color]="color">
+                </ngx-mat-file-input>
+            </mat-form-field> -->
+            <!-- 
+            <input #csvInput hidden="true" type="file" onclick="this.value=null" (change)="csvInputChange($event)" />
+            <button mat-flat-button color="primary" (click)="csvInput.click()">Choose File</button>
+            <br> -->
+
+            <div>
+
+                <img *ngFor='let file of files' [src]="file" height="200"> <br />
+
+                <!-- <input formControlName="files" type='file' (change)="onSelectFile($event)" multiple> -->
+                <input formControlName="files" type="file" (change)="upload($event)" multiple />
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                    [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+                File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
+            </div>
+            <!-- <div *ngFor="let file of files">
+                <upload-task [file]="file"></upload-task>
+            </div> -->
+            <!-- <mat-form-field appearance="fill" style="width:70%">
+                <mat-label>Documents</mat-label>
+                <input formControlName="document" matInput required>
+            </mat-form-field> -->
+            <br>
+            <div class="Button">
+                <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
+<!-- </div> -->

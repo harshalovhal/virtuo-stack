@@ -45,6 +45,12 @@ import { HeaderComponent } from "./header/header.component";
 import { EmailSignupComponent } from "./email-signup/email-signup.component";
 import { MyPlacesComponent } from "./my-places/my-places.component";
 import { HomeComponent } from "./home/home.component";
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
+import { CheckinComponent } from './checkin/checkin.component';
+import { CheckinSuccessComponent } from './checkin-success/checkin-success.component';
+// import { NgxMatFileInputModule } from '@angular-material-components/file-input';
+// import { MaterialFileUploadComponent } from './material-file-upload/material-file-upload.component';
 
 const config = new AuthServiceConfig([
   {
@@ -77,6 +83,8 @@ const firebaseConfig = {
     EmailSignupComponent,
     MyPlacesComponent,
     HomeComponent,
+    CheckinComponent,
+    CheckinSuccessComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,6 +111,9 @@ const firebaseConfig = {
     MatCheckboxModule,
     MatInputModule,
     MatPaginatorModule,
+    AngularFireStorageModule,
+    // NgxMatFileInputModule,
+
 
     AgmCoreModule.forRoot({
       // apiKey: "AIzaSyDf-Srx_Lcs4kyHYeOm73SKx-8N4yYmUEc",
@@ -122,4 +133,4 @@ const firebaseConfig = {
   // entryComponents: [LoginComponent],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

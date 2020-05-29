@@ -6,6 +6,7 @@ import { switchMap } from "rxjs/operators";
 import { User } from "../_models/user.model"; // optional
 import { Observable, of } from "rxjs";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Injectable({
   providedIn: "root",
@@ -18,7 +19,9 @@ export class PlacesService {
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private router: Router,
+
   ) {
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
@@ -112,6 +115,17 @@ export class PlacesService {
       let docRef = doc.ref;
       docRef.update(placeObj);
     });
+  }
+
+  async  checkinCustomer(form) {
+    let myPlaceDocRef = await firebase
+      .firestore()
+      .collection("checkin").doc().set(form.value);
+    console.log(myPlaceDocRef);
+    this.router.navigate(["/checkin-success"])
+
+
+    // myPlaceDocRef.set(form, { merge: true });
   }
 
   async deletePlace(place, user_id) {
